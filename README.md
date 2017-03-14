@@ -14,7 +14,7 @@
  
  2 Для вызова скрипта просто пропишите его название
 
-![](Laboratory work 1/img/Screenshot_20170313_024434.png) 
+![](Laboratory_work_1/img/Screenshot_20170313_024434.png) 
 
  3 Нажмите Enter
  

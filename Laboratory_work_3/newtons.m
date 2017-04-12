@@ -1,13 +1,26 @@
-function [xi] = newtons (a, b,eps)
-  xb = b;
-  xa = a;
+function [x1] = newtons (a, b,eps)
+  x0 = a;
+  if ( our_function(x0) * ddf(x0) > 0)
+    while(1)
+      x1 = x0 - our_function(x0)/df(x0);
+      if (abs(x1-x0) < eps) 
+        x0=x1;
+      else 
+        break
+      endif
+    end
+  x0 = b;
+  if (our_function(x0)*df(x0) > 0)
+    while(1)
+      x1 = x0 - our_function(x0)/df(x0);
+      if (abs(x1-x0) < eps) 
+        x0=x1;
+      else 
+        break
+      endif
+    end
+  else 
+    display("Поменяйте начальное приблежение")
+  end
   
-  while(abs(xb) > eps )
-    p1 = our_function(xa);
-    q1 = df(xa);
-    xa -= p1/q1;
-    xb = p1
-   end
-   xi = xb
-    
-endfunction
+end

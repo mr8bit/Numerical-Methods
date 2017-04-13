@@ -1,7 +1,7 @@
 function [b] = hord( a,b,eps )
-  c =a;
-  while( abs(our_function(c))>eps)
-    c = a - (b-a) / (our_function(b) - our_function(a)) * our_function(a);
-    b=c;
-  end
+  while(abs(b - a) > eps)
+        a = b - (b - a) * our_function(b)/(our_function(b) - our_function(a));
+        b = a + (a - b) * our_function(a)/(our_function(a) - our_function(b));
+   end 
+    
 end
